@@ -4,6 +4,9 @@ new Vue({
 
     },
     methods: {
+        logGender: function(){
+            console.log('you entered your gender');
+        },
         logName: function(){
             console.log('you entered your name');
         },

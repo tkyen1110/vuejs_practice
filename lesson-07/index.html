@@ -9,6 +9,8 @@
     <body>
         <div id="vue-app">
             <h1>Keyboard Events</h1>
+            <label>Gender:</label>
+            <input type="text" v-on:keyup="logGender" />
             <label>Name:</label>
             <input type="text" v-on:keyup.enter="logName" />
             <label>Age:</label>
