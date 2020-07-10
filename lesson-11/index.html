@@ -11,8 +11,16 @@
             <h1>Conditionals</h1>
             <button v-on:click="error = !error">Toggle error</button>
             <button v-on:click="success = !success">Toggle success</button>
+
+            <!-- [comment] v-if takes the element out of the DOM [comment-end]-->
+
             <!-- <p v-if="error" class="error">There has been an error</p>
             <p v-else-if="success" class="success">Whooo, success :)</p> -->
+
+            <!-- [comment] v-show does not take the element out of the DOM, instead it toggles between these two html
+            <p class="error" style>There has been an error</p>
+            <p class="error" style="display: none">There has been an error</p> [comment-end] -->
+
             <p v-show="error" class="error">There has been an error</p>
             <p v-show="success" class="success">Whooo, success :)</p>
         </div>
