@@ -9,8 +9,10 @@
     <body>
         <div id="vue-app">
             <h1>Events</h1>
-            <button v-on:click="add(1)">Add a Year</button>
-            <button v-on:click="subtract(1)">Subtract a Year</button>
+            <button v-on:click="age++">Add a Year v1</button>
+            <button v-on:click="age--">Subtract a Year v1</button>
+            <button v-on:click="add(1)">Add a Year v2</button>
+            <button v-on:click="subtract(1)">Subtract a Year v2</button>
             <button v-on:dblclick="add(10)">Add 10 Years</button>
             <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
             <p>My age is {{age}}</p>
