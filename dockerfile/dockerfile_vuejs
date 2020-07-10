@@ -1,0 +1,54 @@
+FROM ubuntu:18.04
+
+ARG USER=adev
+ARG UID=1000
+ARG GID=1000
+
+ENV DISPLAY :11
+
+RUN DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    apt-get install -y sudo vim git wget curl unzip && \
+    apt-get install -y net-tools iputils-ping && \
+    apt-get install -y dirmngr apt-transport-https lsb-release ca-certificates && \
+    # Install make
+    apt-get install -y build-essential && \
+    # Install apache2 webserver
+    apt-get install -y apache2 && \
+    ### Install Node.js
+    # curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - && \
+    # Install Node.js 12.x and npm
+    apt-get install -y nodejs && \
+    # Install Vue-cli
+    npm install -g @vue/cli && \
+    npm install -g @vue/cli-init && \
+    # Install development tools to build native addons
+    apt-get install -y gcc g++ make && \
+    # Install Yarn package manager
+    curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && \
+    apt-get install -y yarn
+
+# Set the home directory to our user's home.
+ENV HOME="/home/$USER"
+
+RUN echo "Create $USER account" &&\
+    # Create the home directory for the new $USER
+    mkdir -p $HOME &&\
+    # Create an $USER so our program doesn't run as root.
+    groupadd -r -g $GID $USER &&\
+    useradd -r -g $USER -G sudo -u $UID -d $HOME -s /sbin/nologin -c "Docker image user" $USER &&\
+    # Set root user no password
+    mkdir -p /etc/sudoers.d &&\
+    echo "$USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USER && \
+    chmod 0440 /etc/sudoers.d/$USER && \
+    # Chown all the files to the $USER
+    chown -R $USER:$USER $HOME
+
+# Change to the $USER
+WORKDIR $HOME
+USER $USER
+
+EXPOSE 8080
