@@ -6,13 +6,16 @@
 </template>
 
 <script>
-// Imports
+// [comment] Register Vue component locally
 import Ninjas from './Ninjas.vue';
+// [comment-end]
 
 export default {
+    // [comment] Register Vue component locally
     components: {
         'ninjas': Ninjas
     },
+    // [comment-end]
     data () {
         return {
           title: 'Ninja App'
