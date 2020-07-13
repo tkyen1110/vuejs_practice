@@ -7,6 +7,7 @@
 
 <script>
 export default {
+    // data: function() {
     data () {
         return {
           title: 'Your first Vue file, wooo!'
