@@ -23,6 +23,7 @@ export default {
     },
     data () {
         return {
+          // Reference type (props to child by reference): object, array
           ninjas: [
               {name: 'Ryu', speciality: 'Vue Components', show: false},
               {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
@@ -31,6 +32,7 @@ export default {
               {name: 'Kami', speciality: 'Webpack', show: false},
               {name: 'Yoshi', speciality: 'Data Diggin', show: false}
           ],
+          // Primitive type (props to child by value): string, boolean, number
           title: 'Vue Wizards'
         }
     }
