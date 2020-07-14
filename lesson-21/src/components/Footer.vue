@@ -18,7 +18,7 @@ footer{
     padding: 6px;
 }
 p{
-        color: lightgreen;
-        text-align: center;
+    color: lightgreen;
+    text-align: center;
 }
 </style>
