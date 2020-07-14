@@ -1,5 +1,7 @@
 <template>
     <div id="ninjas">
+        <p>{{ ninjas }}</p>
+        <p>{{ showNinjas() }}</p>
         <ul>
             <li v-for="ninja in ninjas" v-on:click="ninja.show = !ninja.show">
                 <h2>{{ ninja.name }}</h2>
@@ -10,15 +12,23 @@
 </template>
 <script>
 export default {
-    props: {
-      ninjas: {
-        type: Array,
-        required: true
-      }
-    },
+    props: ['ninjas'],
+    // // [comment] Validation
+    // props: {
+    //   ninjas: {
+    //     type: Array,
+    //     required: true
+    //   }
+    // },
+    // // [comment-end]
     data(){
         return{
 
+        }
+    },
+    methods:{
+        showNinjas: function(){
+            return this.ninjas
         }
     }
 }

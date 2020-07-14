@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-header></app-header>
-        <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
+        <app-ninjas v-bind:ninjas="ninjas_obj"></app-ninjas>
         <app-footer></app-footer>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     },
     data () {
         return {
-          ninjas: [
+          ninjas_obj: [
               {name: 'Ryu', speciality: 'Vue Components', show: false},
               {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
               {name: 'Hitoshi', speciality: 'Click Events', show: false},
