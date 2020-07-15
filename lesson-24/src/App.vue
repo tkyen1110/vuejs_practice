@@ -1,11 +1,11 @@
 <template>
     <div>
-        <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
+        <app-header v-bind:title="app_title" v-on:changeAppTitle="updateTitle($event)"></app-header>
         <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
         <ul>
           <li v-for="ninja in ninjas">{{ ninja.name }}</li>
         </ul>
-        <app-footer v-bind:title="title"></app-footer>
+        <app-footer v-bind:title="app_title"></app-footer>
     </div>
 </template>
 
@@ -31,12 +31,12 @@ export default {
               {name: 'Kami', speciality: 'Webpack', show: false},
               {name: 'Yoshi', speciality: 'Data Diggin', show: false}
           ],
-          title: 'Vue Wizards'
+          app_title: 'Vue Wizards'
         }
     },
     methods: {
       updateTitle: function(updatedTitle){
-        this.title = updatedTitle;
+        this.app_title = updatedTitle;
       }
     }
 }
