@@ -27,16 +27,22 @@ export default {
       }
     },
     // lifecycle hooks
+    // Before creating Vue component
     beforeCreate(){
         alert('beforeCreate');
     },
+    // Vue component has been created
     created(){
+        // Good for fetching data
         alert('created');
     },
+    // Before mounting Vue component to the DOM
     beforeMount(){
         alert('beforeMount');
     },
+    // Vue component has been mounted to the DOM
     mounted(){
+        // Good for manipulating the DOM
         alert('mounted');
     },
     beforeUpdate(){
