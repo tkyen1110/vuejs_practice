@@ -19,7 +19,7 @@ export default {
 
         }
     },
-    created(){
+    created(){ // This is life cycle hook
         bus.$on('titleChanged', (data) => {
             this.title = data;
         });
@@ -32,7 +32,7 @@ footer{
     padding: 6px;
 }
 p{
-        color: lightgreen;
-        text-align: center;
+    color: lightgreen;
+    text-align: center;
 }
 </style>
