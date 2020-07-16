@@ -1,5 +1,11 @@
 <template>
     <div>
+        <!-- [comment] Two equivalent tag to show form-one -->
+        <!-- <component is="form-one"></component> -->
+        <!-- <form-one></form-one> -->
+        <!-- [comment-end] -->
+
+        <!-- [comment] keep-alive: do not delete the component when we switch to new one [comment-end]-->
         <keep-alive>
             <component v-bind:is="component"></component>
         </keep-alive>
