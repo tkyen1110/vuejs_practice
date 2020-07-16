@@ -1,6 +1,8 @@
 <template>
     <div>
-    <h1>Please fill out our form...</h1>
+        <slot name="title"></slot>
+        <h1>Please fill out our form...</h1>
+        <slot name="text"></slot>
         <form>
             <div id="form-header">
                 <slot name="form-header"></slot>
@@ -65,5 +67,6 @@ form > div{
 #form-header{
     background: #ddd;
     border: 1px solid #bbb;
+    text-align: left;
 }
 </style>

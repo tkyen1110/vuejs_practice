@@ -1,6 +1,8 @@
 <template>
     <div>
         <form-helper>
+            <h2 slot="title">{{title}}</h2>
+            <p slot="text" class="paragraph1">I am the paragraph text for the slot</p>
             <div slot="form-header">
                 <h3>This is the title of a form</h3>
                 <p>This is some info about the form</p>
@@ -26,7 +28,7 @@ export default {
     },
     data () {
         return {
-
+            title: 'I am a dynamic slot title'
         }
     },
     methods: {
@@ -41,5 +43,11 @@ export default {
 body{
     margin: 0;
     font-family: 'Nunito SemiBold';
+}
+h2{
+    text-align: center;
+}
+p.paragraph1{
+    text-align: center;
 }
 </style>
