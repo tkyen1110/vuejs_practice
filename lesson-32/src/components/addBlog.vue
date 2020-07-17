@@ -22,6 +22,7 @@
                 <option v-for="author in authors">{{ author }}</option>
             </select>
             <hr />
+            <!--[comment] click.prevent: prevent the default behavior [comment-end]-->
             <button v-on:click.prevent="post">Add Blog</button>
         </form>
         <div v-if="submitted">
@@ -57,8 +58,11 @@ export default {
             submitted: false
         }
     },
+    // [comment] https://github.com/pagekit/vue-resource
+    // [comment] npm install vue_resource --save (Save it to our dependencies)
     methods: {
         post: function(){
+            // [comment] https://jsonplaceholder.typicode.com/
             this.$http.post('http://jsonplaceholder.typicode.com/posts', {
                 title: this.blog.title,
                 body: this.blog.content,
