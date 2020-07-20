@@ -26,6 +26,19 @@ export default {
         });
     },
     computed: {
+        // // [comment]
+        // // this.blogs: current blog array
+        // // this.blogs.filter(boolean):
+        // //     current blog array with some stuff filtered out of it
+        // //     (filter function cycles through the array this.blogs)
+        // //     if boolean is true, then that blog stays in the array.
+        // //     if boolean is false, then that blog is removed from the array;
+        // filteredBlogs: function(){
+        //     return this.blogs.filter((blog) => {
+        //         return boolean;
+        //     });
+        // }
+        // // [comment-end]
         filteredBlogs: function(){
             return this.blogs.filter((blog) => {
                 return blog.title.match(this.search);
