@@ -5,8 +5,10 @@ import App from './App.vue'
 // Use vue-resource package
 Vue.use(VueResource);
 
-// Custom directives
+// Create custom directives globally which means any component can use it
 Vue.directive('rainbow', {
+    // Vue components have lifecycle hooks.
+    // Vue directives have lifecycle hooks called bind. (Fire when the directive is bound to the element.)
     bind(el, binding, vnode){
         el.style.color = "#" + Math.random().toString(16).slice(2, 8);
     }
