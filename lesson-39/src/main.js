@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import VueResource from 'vue-resource'
-import VueRouter from 'vue-router'
+import VueResource from 'vue-resource' // npm install vue_resource --save
+import VueRouter from 'vue-router'     // npm install vue-router --save
 import App from './App.vue'
 import Routes from './routes'
 
