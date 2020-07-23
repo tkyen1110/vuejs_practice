@@ -11,7 +11,7 @@
 import searchMixin from '../mixins/searchMixin';
 
 export default {
-    data () {
+    data() {
         return {
             id: this.$route.params.id,
             blog: {}
@@ -19,7 +19,7 @@ export default {
     },
     created() {
         this.$http.get('http://jsonplaceholder.typicode.com/posts/' + this.id).then(function(data){
-            // console.log(data);
+            console.log(data);
             this.blog = data.body;
         });
     }
