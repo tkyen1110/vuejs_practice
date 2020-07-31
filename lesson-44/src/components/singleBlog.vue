@@ -23,7 +23,7 @@ export default {
         }
     },
     created() {
-        this.$http.get('https://nn-vue-playlist.firebaseio.com/posts/' + this.id + '.json').then(function(data){
+        this.$http.get('https://vuejs-practice-a7f35.firebaseio.com/posts/' + this.id + '.json').then(function(data){
             return data.json();
         }).then(function(data){
             this.blog = data;

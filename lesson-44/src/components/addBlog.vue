@@ -48,7 +48,9 @@ export default {
     },
     methods: {
         post: function(){
-            this.$http.post('https://nn-vue-playlist.firebaseio.com/posts.json', this.blog).then(function(data){
+            // https://firebase.google.com
+            // https://console.firebase.google.com/u/0/project/vuejs-practice-a7f35/database/vuejs-practice-a7f35/data/~2F
+            this.$http.post('https://vuejs-practice-a7f35.firebaseio.com/posts.json', this.blog).then(function(data){
                 console.log(data);
                 this.submitted = true;
             });

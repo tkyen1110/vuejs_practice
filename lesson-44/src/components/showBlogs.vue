@@ -21,11 +21,16 @@ export default {
         }
     },
     created() {
-        this.$http.get('https://nn-vue-playlist.firebaseio.com/posts.json').then(function(data){
+        // https://firebase.google.com
+        // https://console.firebase.google.com/u/0/project/vuejs-practice-a7f35/database/vuejs-practice-a7f35/data/~2F
+        this.$http.get('https://vuejs-practice-a7f35.firebaseio.com/posts.json').then(function(data){
             return data.json()
         }).then(function(data){
+            console.log(data);
             var blogsArray = [];
             for (let key in data){
+                console.log(key);
+                console.log(data[key]);
                 data[key].id = key;
                 blogsArray.push(data[key]);
             }
